@@ -10,10 +10,12 @@ $options = $client->authorize("wovo.xyz");
 //$c=new AcmePhp\Core\Protocol\AuthorizationChallenge();
 //$c->get
 foreach ($options as $option) {
-    echo "Type :". $option->getType()."<br>";
-    echo "URL :". $option->getUrl()."<br>";
-    echo "Domain :". $option->getDomain()."<br>";
-    echo "Token :". $option->getToken()."<br>";
-    echo "Status :". $option->getStatus()."<br><br><br>";
+    echo "Type :" . $option->getType() . "<br>";
+    echo "URL :" . $option->getUrl() . "<br>";
+    echo "Domain :" . $option->getDomain() . "<br>";
+    echo "Token :" . $option->getToken() . "<br>";
+    echo "Status :" . $option->getStatus() . "<br><br><br>";
 
 }
+
+print_r($client->getClient()->challengeAuthorization($options[0]));
