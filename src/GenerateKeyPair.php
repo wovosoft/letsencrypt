@@ -12,12 +12,7 @@ class GenerateKeyPair
     private string $privateKeyPath = __DIR__ . '/../keys/account.pem';
     private string $publicKeyPath = __DIR__ . '/../keys/account.pub.pem';
 
-    public function handle(): KeyPair
-    {
-        return $this->getKeyPair();
-    }
-
-    public function getKeyPair()
+    public function getKeyPair(): KeyPair
     {
         [$publicKey, $privateKey] = $this->keyExists() ? $this->getKeys() : $this->generateKeyPair();
         return new KeyPair($publicKey, $privateKey);
