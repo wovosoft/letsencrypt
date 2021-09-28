@@ -14,6 +14,6 @@ foreach ($options as $option) {
     echo "URL :". $option->getUrl()."<br>";
     echo "Domain :". $option->getDomain()."<br>";
     echo "Token :". $option->getToken()."<br>";
-    echo "Status :". $option->getStatus()."<br>";
+    echo "Status :". $option->getStatus()."<br><br><br>";
 
 }
