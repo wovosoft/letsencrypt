@@ -1,2 +1,2 @@
 <?php
-echo "hi";
+require_once __DIR__ . "/vendor/autoload.php";
