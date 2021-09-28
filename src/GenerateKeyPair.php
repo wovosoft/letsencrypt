@@ -20,8 +20,6 @@ class GenerateKeyPair
     public function getKeyPair()
     {
         [$publicKey, $privateKey] = $this->keyExists() ? $this->getKeys() : $this->generateKeyPair();
-        var_dump($publicKey,$privateKey);
-        return ;
         return new KeyPair($publicKey, $privateKey);
     }
 
@@ -38,16 +36,16 @@ class GenerateKeyPair
         file_put_contents($this->publicKeyPath, $keyPair->getPublicKey()->getPEM());
         file_put_contents($this->privateKeyPath, $keyPair->getPrivateKey()->getPEM());
         return [
-            $keyPair->getPublicKey()->getPEM(),
-            $keyPair->getPrivateKey()->getPEM()
+            $keyPair->getPublicKey(),
+            $keyPair->getPrivateKey()
         ];
     }
 
     public function getKeys(): array
     {
         return [
-            (new PublicKey(file_get_contents($this->publicKeyPath)))->getPEM(),
-            (new PrivateKey(file_get_contents($this->privateKeyPath)))->getPEM()
+            new PublicKey(file_get_contents($this->publicKeyPath)),
+            new PrivateKey(file_get_contents($this->privateKeyPath))
         ];
     }
 }
