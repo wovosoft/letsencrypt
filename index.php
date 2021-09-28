@@ -5,17 +5,15 @@ $client = new \AcmePhp\Core\src\Client();
 //print_r($client->register());
 
 
-echo "<h1>Register</h1>";
 $options = $client->authorize("wovo.xyz");
-//$c=new AcmePhp\Core\Protocol\AuthorizationChallenge();
-//$c->get
-foreach ($options as $option) {
-    echo "Type :" . $option->getType() . "<br>";
-    echo "URL :" . $option->getUrl() . "<br>";
-    echo "Domain :" . $option->getDomain() . "<br>";
-    echo "Token :" . $option->getToken() . "<br>";
-    echo "Status :" . $option->getStatus() . "<br><br><br>";
+//
+//foreach ($options as $option) {
+//    echo "Type :" . $option->getType() . "<br>";
+//    echo "URL :" . $option->getUrl() . "<br>";
+//    echo "Domain :" . $option->getDomain() . "<br>";
+//    echo "Token :" . $option->getToken() . "<br>";
+//    echo "Status :" . $option->getStatus() . "<br><br><br>";
+//
+//}
 
-}
-
-print_r($client->getClient()->challengeAuthorization($options[0]));
+var_dump($client->getClient()->challengeAuthorization($options[0]));
