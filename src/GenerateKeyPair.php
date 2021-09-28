@@ -20,6 +20,8 @@ class GenerateKeyPair
     public function getKeyPair(): KeyPair
     {
         [$publicKey, $privateKey] = $this->keyExists() ? $this->getKeys() : $this->generateKeyPair();
+        var_dump([$publicKey, $privateKey]);
+        return ;
         return new KeyPair($publicKey, $privateKey);
     }
 
