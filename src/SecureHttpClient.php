@@ -15,9 +15,7 @@ class SecureHttpClient
     {
         return $this
             ->secureHttpClientFactory()
-            ->createSecureHttpClient(
-                (new GenerateKeyPair())->handle()
-            );
+            ->createSecureHttpClient((new GenerateKeyPair())->getKeyPair());
     }
 
     public function secureHttpClientFactory(): SecureHttpClientFactory
