@@ -44,8 +44,8 @@ class GenerateKeyPair
     public function getKeys(): array
     {
         return [
-            new PublicKey(file_get_contents($this->publicKeyPath)),
-            new PrivateKey(file_get_contents($this->privateKeyPath))
+            (new PublicKey(file_get_contents($this->publicKeyPath)))->getPEM(),
+            (new PrivateKey(file_get_contents($this->privateKeyPath)))->getPEM()
         ];
     }
 }
