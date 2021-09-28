@@ -16,11 +16,12 @@ class GenerateKeyPair
     {
         return $this->getKeyPair();
     }
-
+[$publicKey, $privateKey] = $this->keyExists() ? $this->getKeys() : $this->generateKeyPair();
+        var_dump($publicKey);
     public function getKeyPair(): KeyPair
     {
         [$publicKey, $privateKey] = $this->keyExists() ? $this->getKeys() : $this->generateKeyPair();
-        var_dump([$publicKey, $privateKey]);
+        var_dump($publicKey);
         return ;
         return new KeyPair($publicKey, $privateKey);
     }
